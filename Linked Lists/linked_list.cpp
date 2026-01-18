@@ -18,7 +18,7 @@ class List{
     void push_front(int val){
         Node* newnode= new Node(val);
         if(head==NULL){
-            head=tail=newNode;
+            head=tail=newnode;
             return;
         }
     }
