@@ -42,7 +42,18 @@ void push_back(int val){
         tail=newNode;
     }
 }
-
+    //pop front
+    void pop_front(){
+        if(head==NULL){
+            cout<<"Empty Linked list.\n";
+            return;
+        }
+        Node* temp=head;
+        head=head->next;
+        if(head==NULL){
+            tail=NULL;
+        }delete temp;
+    }
 
 
 
@@ -65,12 +76,11 @@ int main(){
     ll.push_front(10);
     ll.push_front(20);
     ll.push_front(30);
-
-    ll.printll();
-    cout<<endl;
     ll.push_back(40);
     ll.push_back(50);
     ll.printll();
-
+    ll.pop_front();
+    cout<<endl;
+    ll.printll();
     return 0;
 }
