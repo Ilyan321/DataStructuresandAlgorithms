@@ -1,86 +1,90 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 class Node{
     public:
     int data;
     Node* next;
-
     Node(int val){
         data=val;
         next=NULL;
     }
 };
-
 class List{
-  public:
-  Node*head;
-  Node* tail;
-  
-  List(){
-    head=tail=NULL;
-}
-void push_front(int val){
-    Node *newNode= new Node(val);
-    if (head==NULL){
-        head=tail=newNode;
-        return;
-        
+    public: 
+    Node* head;
+    Node* tail;
+    List(){
+        head=tail=NULL;
     }
-    else{
-        newNode->next=head;
-        head=newNode;
-    }} //Pushfront end
-
-
-void push_back(int val){
-    Node* newNode= new Node(val);
-    if (head==NULL){
-        head=tail=newNode;
-        return;
-    }else{
-        tail->next=newNode;
-        tail=newNode;
+    //push_front
+    void push_front(int val){
+        Node* newnode=new Node(val);
+        if (head==NULL){
+            head=tail=newnode;
+            return;
+        }else{
+            newnode->next=head;
+            head=newnode;
+        }
     }
-}
-    //pop front
+    //push back
+    void push_back(int val){
+        Node* newnode=new Node(val);
+        if (head==NULL){
+            head=tail=NULL;
+            return;
+        }else{
+            tail->next=newnode;
+            tail=newnode;
+        }
+    }
+    // pop front
     void pop_front(){
-        if(head==NULL){
-            cout<<"Empty Linked list.\n";
+        if (head==NULL){
+            cout<<"Empty list."<<endl;
+        }head=head->next;
+    }
+
+    // pop back
+    void pop_back(){
+        if (head==NULL){
+            cout<<"Empty list."<<endl;
+            return;
+        }
+        if (head==tail){
+            delete head;
+            tail=head=NULL;
             return;
         }
         Node* temp=head;
-        head=head->next;
+        while(temp->next!=tail){
+            temp=temp->next;
+        }
+        delete tail;
+        tail=temp;
+        tail->next=NULL;
+    }
+
+
+    //print
+    void printll(){
+        Node* temp=head;
         if(head==NULL){
-            tail=NULL;
-        }delete temp;
+            cout<<"Empty list"<<endl;
+            return;
+        }
+        cout<<"linked list: ";
+        while(temp!=NULL){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
     }
-
-
-
-
-
-
-
-  void printll(){
-    Node* temp=head;
-    cout<<"Linked list: ";
-    while(temp!=NULL){
-        cout<<temp->data<<" ";
-        temp=temp->next;
-    }
-  }
-
 };
 int main(){
     List ll;
     ll.push_front(10);
-    ll.push_front(20);
-    ll.push_front(30);
-    ll.push_back(40);
-    ll.push_back(50);
-    ll.printll();
+    ll.push_back(20);
     ll.pop_front();
-    cout<<endl;
+    ll.pop_back();
     ll.printll();
-    return 0;
 }
