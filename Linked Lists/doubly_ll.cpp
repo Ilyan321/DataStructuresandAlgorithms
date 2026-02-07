@@ -59,8 +59,31 @@ class List{
         tail->next=NULL;
     }
 
+    //reverse 
+    void reverse(){
+        Node* temp=tail;
+        cout<<"Reversed linked list: ";
+        while(temp!=NULL){
+            cout<<temp->data<<" ";
+            temp=temp->prev;
+        }
+    }
+
+    //search
+    void searchN(){
+        int counter=1;bool found=false;
+        Node* temp=head;int node;
+        cout<<"Enter node to search: ";cin>>node;
+        while(temp!=NULL){
+            if(temp->data==node){
+                cout<<"Node "<<temp->data<<" found at location "<<counter<<endl;
+                found=true;
+            } temp=temp->next;
+            counter++;
 
 
+        }if(!found){cout<<"404 Error, Node not found.\n";}
+    }
 
 
 
@@ -91,11 +114,12 @@ cout<<endl;
 };
 int main(){
     List ll;
-    // ll.push_front(10);
-    // ll.push_front(5);
+    ll.push_front(10);
+    ll.push_front(5);
     ll.push_back(15);
-    ll.pop_front();
+    ll.searchN();
+    // ll.pop_front();
     // ll.pop_back();
     ll.printll();
-    ll.printbl();
+    ll.reverse();
 }
