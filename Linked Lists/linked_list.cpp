@@ -114,7 +114,7 @@ int main(){
 	ll.push_back(15);
 	ll.counter();
 	ll.search();
-	// ll.pop_front();
-	// ll.pop_back();
+	ll.pop_front();
+	ll.pop_back();
 	ll.printll();
 }
