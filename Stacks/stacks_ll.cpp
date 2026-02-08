@@ -39,8 +39,9 @@ class Stack{
     //pop
     int pop(){
         if(head==NULL){cout<<"Cant pop stack empty.\n";return -1;}
+        int val=head->data;
         if (head==tail){head=tail=NULL;}else{head=head->next;}
-        return head->data;
+        return val;
     }
 
 
