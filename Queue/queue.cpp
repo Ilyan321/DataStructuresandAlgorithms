@@ -6,7 +6,6 @@ class Node{
     Node* next;
     Node(int val){data=val;next=NULL;}
 };
-
 class Queue{
     public:
     Node* front;
@@ -27,11 +26,6 @@ class Queue{
         if(front==NULL){rear=NULL;}
         delete temp;
     }
-
-
-
-
-
     //print
     void Print(){
         Node* temp=front;
@@ -39,15 +33,10 @@ class Queue{
         while(temp!=NULL){cout<<temp->data<<" ";temp=temp->next;}
         cout<<endl;
     }
-
 //peek
 void peek(){
     cout<<"front element is: "<<front->data<<endl;
-}
-
-
-
-};
+}};
 int main(){
     Queue queue;
     queue.push(10);
