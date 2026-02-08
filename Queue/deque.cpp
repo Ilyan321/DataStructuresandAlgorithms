@@ -51,6 +51,16 @@ class deque{
 
         }
 
+
+    //peek front
+    void peek_front(){
+        cout<<"front element is: "<<front->data<<endl;
+    }
+    //peek rear
+    void peek_rear(){
+        cout<<"The Rear element is: "<<rear->data<<endl;
+    }
+
     //print
     void print(){
         Node* temp=front;
@@ -69,7 +79,9 @@ int main(){
     deque.push_back(30);
     deque.print();
     // deque.pop_front();
-    deque.print();
-    deque.pop_back();
-    deque.print();
+    // deque.print();
+    // deque.pop_back();
+    deque.peek_front();
+    deque.peek_rear();
+//     deque.print();
 }
