@@ -100,9 +100,9 @@ int main(){
     ll.push_back(10);
     ll.push_back(30);
     ll.printll();
-    ll.search();
+    // ll.search();
     // ll.pop_front();
-    // ll.pop_back();
+    ll.pop_back();
     ll.printll();
-    ll.reverse();
+    // ll.reverse();
 }
