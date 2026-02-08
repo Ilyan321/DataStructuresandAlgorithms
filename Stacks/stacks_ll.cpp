@@ -28,14 +28,23 @@ class Stack{
            head=newnode;
         }
     }
-   //pop 
+//    //pop 
+//     int pop(){
+//         if(head==NULL){cout<<"Stack empty.\n";return -1;}
+//         int val=head->data;
+//         if(head==tail){head=tail=NULL;}
+//         else{head=head->next;}
+//         return val;
+//     }    
+    //pop
     int pop(){
-        if(head==NULL){cout<<"Stack empty.\n";return -1;}
-        int val=head->data;
-        if(head==tail){head=tail=NULL;}
-        else{head=head->next;}
-        return val;
-    }    
+        if(head==NULL){cout<<"Cant pop stack empty.\n";return -1;}
+        if (head==tail){head=tail=NULL;}else{head=head->next;}
+        return head->data;
+    }
+
+
+
 
     //print stack
     void print(){
